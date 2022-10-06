@@ -1,20 +1,39 @@
 import re
 import os
-cantidad = 0
 
+error = "error 404"
+files = []
 from flask import Flask, request
+
+def withopen (archivo):
+
+    try:
+        with open(f"./coleccion_2022/{archivo}", encoding="utf8", errors='ignore') as file:
+            mensaje = file.read()
+            mensaje2 = re.sub(r'[^ \nA-Za-z0-9À-ÖØ-öø-ÿ/]+', " ", mensaje).lower().split()
+            return (mensaje2)
+    except:
+        return (error)
+
+
 app = Flask(__name__)
 @app.route('/') # url a utilizar
+
 def query ():
     """Funcion utilizada cada vez que se haga una peticion al / """
     args = request.args
-    file = args.get('file', default=None, type=str)# argumento recibido en la peticion
-    word = args.get('word', default=None, type=str) # argumento recibido en la peticion
+    file = args.get('file', default=None, type=str)
+
+    try:
+        word = args.get('word', default=None, type=str).lower()
+    except:
+        return (error)
+
     cantidad = 0
-    files = []
+
     if file is None: # Si en la peticion no se detalla el arg file, devuelve none
 
-        path = os.listdir() # Declaro variable con contenido del directorio actual
+        path = os.listdir("./coleccion_2022") # Declaro variable con contenido del directorio actual
         files = []
         for j in path: # Recorro el directorio actual
 
@@ -23,39 +42,25 @@ def query ():
 
         # Recorro y abro archivos .txt para leer su contenido
         for k in files: # Recorro y abro archivos .txt para leer su contenido
+            subcant = withopen(k)
 
-            with open(k, encoding='utf8') as file:
-                mensaje3 = []
-                mensaje = file.read()
-                # Estandarizar el texto a minuscula:
-                mensaje1 = mensaje.lower()
-                # Reemplazo texto que no sea alfanumerico y con tildes por espacios
-                mensaje2 = re.sub(r'[^ \nA-Za-z0-9À-ÖØ-öø-ÿ/]+', " ", mensaje1)
-                # Convierto string a lista:
-                mensaje3 = mensaje2.split()
-                #Si la palabra esta en la lista, cuento la frecuencia:
-                if word in mensaje3:
-                    cantidad = cantidad + mensaje3.count(word)
+            if word in subcant:
+                cantidad = cantidad + subcant.count(word)
 
         diccionario = {"Frecuencia": cantidad}
         return f'{diccionario}'
 
-
-    if word is None:
-        return f'Debe ingresar word'
-
-    with open(file, encoding='utf8') as file:
-        mensaje = file.read()
-        mensaje1 = mensaje.lower()
-        mensaje2 = re.sub(r'[^ \nA-Za-z0-9À-ÖØ-öø-ÿ/]+', " ", mensaje1)
-        mensaje3 = mensaje2.split()
-        if word in mensaje3:
-            cantidad = mensaje3.count(word)
-            diccionario = {"Frecuencia":cantidad}
-            return f'{diccionario}'
-        else:
+    else:
+        archivos2 = withopen(file)
+        if word in archivos2:
+            cantidad = archivos2.count(word)
             diccionario = {"Frecuencia": cantidad}
             return f'{diccionario}'
+
+
+
+    return (error)
+
 
 
 if __name__ == '__main__':
