@@ -1,7 +1,9 @@
 #  Challenge MeLi 
 
 
-El challenge consiste en desarrollar una api que devuelva la frecuencia de una palabra, dado 1 o varios archivos de texto
+El challenge consiste en desarrollar una api que devuelva la frecuencia de una palabra, dado 1 o varios archivos de texto.
+
+La API fue 
 
 
 <p align="center">
@@ -54,7 +56,7 @@ El challenge consiste en desarrollar una api que devuelva la frecuencia de una p
 
 * En este archivo se detalla los paquetes que se precisan instalar en el servidor en el que va a correr la api.
 
-### [Coleccion_2022](/coleccion_2022/)
+### [Coleccion_2022](https://github.com/lcastineiras/meli/tree/49cc1c3bda1d59b883b3d4e433a3065e142d0086/coleccion_2022)
 
 * Esta carpeta contiene los archivos .txt a ser analisados.
 
