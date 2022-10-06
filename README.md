@@ -3,7 +3,12 @@
 
 El challenge consiste en desarrollar una api que devuelva la frecuencia de una palabra, dado 1 o varios archivos de texto.
 
-La API fue 
+La API fue desarrollada en Python, utilizando Flask como framework para el despliegue de la apicación web.
+Uno de los objetivos de este challenge es disponibilizar la api "0 touch" por lo que se utilizo la herramienta Heroku para cumplir este requerimiento.
+
+La URL para poder realizar los request es la siguiente:
+  * https://lcastineiras.herokuapp.com
+En el respositorio se encuentra una coleccion de [Postman](https://github.com/lcastineiras/meli/blob/9ceccb7cf7ca74c91bcaac04c3c08e09d8d1360c/Docs/meli-frequency.postman_collection.json) con las distintas casuisticas de los request.
 
 
 <p align="center">
