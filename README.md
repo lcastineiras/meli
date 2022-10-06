@@ -5,5 +5,5 @@ El challenge consiste en desarrollar una api que devuelva la frecuencia de una p
 
 
 <p align="center">
-<img src="Docs/Multimedia1.gif" width="800" alt="Funcionamiento de la api" />
+<img src="Docs/Multimedia1.gif" width="1000" alt="Funcionamiento de la api" />
 </p>
