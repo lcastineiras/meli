@@ -40,6 +40,12 @@ El challenge consiste en desarrollar una api que devuelva la frecuencia de una p
 
 ### [main.py](https://github.com/lcastineiras/meli/blob/49cc1c3bda1d59b883b3d4e433a3065e142d0086/main.py)
 
+ * En este archivo se encuentra el código para hacer el despliegue de la api.
+ 
+### [funcion.py]
+
+* En este archivo se encuentra el codigo de las funciones que utilizará el main.py
+
 
 
 
