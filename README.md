@@ -9,7 +9,7 @@ El challenge consiste en desarrollar una api que devuelva la frecuencia de una p
 </p>
 
 
-## Prerrequisitos
+## Prerrequisitos  
 
 - Navegador web
 - Postman
@@ -23,7 +23,13 @@ El challenge consiste en desarrollar una api que devuelva la frecuencia de una p
 
 ## DATOS DE LA INFRAESTRUCTURA
 
+* Heroku
+* Github
+
+
 * Paquetes
   * Python3
   * Flask
   * Gunicorn
+
+
