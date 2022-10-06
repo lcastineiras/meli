@@ -13,3 +13,10 @@ El challenge consiste en desarrollar una api que devuelva la frecuencia de una p
 
 - Navegador web
 - Postman
+
+
+## Arquitectura
+
+<p align="center">
+<img src="Docs/Diagrama.jpeg" width="900" alt="Funcionamiento de la api" />
+</p>
