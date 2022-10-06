@@ -21,7 +21,7 @@ El challenge consiste en desarrollar una api que devuelva la frecuencia de una p
 <img src="Docs/Diagrama.jpeg" width="900" alt="Funcionamiento de la api" />
 </p>
 
-## DATOS DE LA INFRAESTRUCTURA
+## Datos de la Infraestructura
 
 * Heroku
 * Github
@@ -31,5 +31,15 @@ El challenge consiste en desarrollar una api que devuelva la frecuencia de una p
   * Python3
   * Flask
   * Gunicorn
+
+* Archivos .txt
+ * Branch: master - meli/coleccion_2022/
+
+
+## Archivos de implementación
+
+### [main.py] (https://github.com/lcastineiras/meli/blob/49cc1c3bda1d59b883b3d4e433a3065e142d0086/main.py)
+
+
 
 
