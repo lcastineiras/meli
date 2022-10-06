@@ -7,13 +7,12 @@ from flask import Flask, request
 
 def withopen (archivo):
 
-    try:
-        with open(f"./coleccion_2022/{archivo}", encoding="utf8", errors='ignore') as file:
-            mensaje = file.read()
-            mensaje2 = re.sub(r'[^ \nA-Za-z0-9À-ÖØ-öø-ÿ/]+', " ", mensaje).lower().split()
-            return (mensaje2)
-    except:
-        return (error)
+
+    with open(f"./coleccion_2022/{archivo}", encoding="utf8", errors='ignore') as file:
+        mensaje = file.read()
+        mensaje2 = re.sub(r'[^ \nA-Za-z0-9À-ÖØ-öø-ÿ/]+', " ", mensaje).lower().split()
+        return (mensaje2)
+
 
 
 
@@ -53,16 +52,21 @@ def query ():
 
     else:
         try:
-            archivo2 = withopen(file)
-
-            if word in archivo2:
-                cantidad = archivo2.count(word)
-                diccionario = {"Frecuencia": cantidad}
-                return f'{diccionario}'
-
-
+            withopen(file)
         except:
-            return (error)
+            return(error)
+
+        archivo2 = withopen(file)
+        if word in archivo2:
+            cantidad = archivo2.count(word)
+            diccionario = {"Frecuencia": cantidad}
+            return f'{diccionario}'
+        else:
+            return("{'Frecuencia': 0}")
+
+    return (error)
+
+
 
 
 
