@@ -8,6 +8,7 @@ Uno de los objetivos de este challenge es disponibilizar la api "0 touch" por lo
 
 La URL para poder realizar los request es la siguiente:
   * https://lcastineiras.herokuapp.com
+  
 En el respositorio se encuentra una coleccion de [Postman](https://github.com/lcastineiras/meli/blob/9ceccb7cf7ca74c91bcaac04c3c08e09d8d1360c/Docs/meli-frequency.postman_collection.json) con las distintas casuisticas de los request.
 
 
