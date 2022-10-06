@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "48713950-1644-49e0-a75b-4c5730938aa5",
+		"name": "meli-frequency",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16365450"
+	},
+	"item": [
+		{
+			"name": "get successful",
+			"item": [
+				{
+					"name": "WordFile",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "WordInAllFiles",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "get failed",
+			"item": [
+				{
+					"name": "FileNotExists",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "WordIsNone",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
