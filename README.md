@@ -7,3 +7,9 @@ El challenge consiste en desarrollar una api que devuelva la frecuencia de una p
 <p align="center">
 <img src="Docs/Multimedia1.gif" width="900" alt="Funcionamiento de la api" />
 </p>
+
+
+## Prerrequisitos
+
+- Navegador web
+- Postman
