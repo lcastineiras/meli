@@ -12,6 +12,7 @@ La URL para poder realizar los request es la siguiente:
 En el respositorio se encuentra una coleccion de [Postman](https://github.com/lcastineiras/meli/blob/9ceccb7cf7ca74c91bcaac04c3c08e09d8d1360c/Docs/meli-frequency.postman_collection.json) con las distintas casuisticas de los request.
 
 
+
 <p align="center">
 <img src="Docs/Multimedia1.gif" width="900" alt="Funcionamiento de la api" />
 </p>
