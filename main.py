@@ -16,6 +16,7 @@ def withopen (archivo):
         return (error)
 
 
+
 app = Flask(__name__)
 @app.route('/') # url a utilizar
 
@@ -44,25 +45,29 @@ def query ():
         for k in files: # Recorro y abro archivos .txt para leer su contenido
             subcant = withopen(k)
 
+
             if word in subcant:
                 cantidad = cantidad + subcant.count(word)
-
         diccionario = {"Frecuencia": cantidad}
         return f'{diccionario}'
 
     else:
-        archivos2 = withopen(file)
-        if word in archivos2:
-            cantidad = archivos2.count(word)
-            diccionario = {"Frecuencia": cantidad}
-            return f'{diccionario}'
-        else:
-            return ("{'Frecuencia': 0}")
+        try:
+            archivo2 = withopen(file)
+
+            if word in archivo2:
+                cantidad = archivo2.count(word)
+                diccionario = {"Frecuencia": cantidad}
+                return f'{diccionario}'
+
+
+        except:
+            return (error)
+
 
 
 
     return (error)
-
 
 
 if __name__ == '__main__':
