@@ -56,6 +56,8 @@ def query ():
             cantidad = archivos2.count(word)
             diccionario = {"Frecuencia": cantidad}
             return f'{diccionario}'
+        else:
+            return ("{'Frecuencia': 0}")
 
 
 
