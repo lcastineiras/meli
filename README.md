@@ -54,7 +54,7 @@ El challenge consiste en desarrollar una api que devuelva la frecuencia de una p
 
 * En este archivo se detalla los paquetes que se precisan instalar en el servidor en el que va a correr la api.
 
-### [coleccion_2022](./coleccion_2022/)
+### [coleccion_2022](/coleccion_2022/)
 
 * Esta carpeta contiene los archivos .txt a ser analisados.
 
