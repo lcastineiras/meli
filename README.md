@@ -7,7 +7,7 @@
 3. [Coleccion de pruebas](#id3)
 4. [Prerrequisitos](#id4)
 5. [Arquitectura](#id5)
-6. [Deploy automatizado](#id6)
+6. [Datos de la Infraestructura ](#id6)
 7. [Archivos de implementación](#id7)
 
 
