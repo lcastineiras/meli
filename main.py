@@ -21,7 +21,7 @@ def query ():
         return (error)
         exit(1)
 
-    cant = 0
+    frequency = 0
 
     # Si no se ingresa ningun file como argumento, busca la palabra ingresada en todos los archivos
     if file is None: # Si no se ingresa ningun file como argumento, busca la palabra ingresada en todos los archivos
@@ -32,9 +32,9 @@ def query ():
             if j.endswith('.txt'): # Verifica que los archivos sean .txt
                 text_file = withopen(j)  # Abre los archivos con la funcion y devuelve una lista con las palabras
 
-                cant = cant + text_file.count(word) # Cuenta la frecuencia de la palabra y la suma a la variable cant
+                frequency = frequency + text_file.count(word) # Cuenta la frecuencia de la palabra y la suma a la variable frequency
                     # si la palabra ingresada no se encuentra, devuelve frecuencia 0
-        resDictionary = {"Frecuencia": cant}
+        resDictionary = {"Frecuencia": frequency}
         return f'{resDictionary}' # Devuelve diccionario con frecuencia de la palabra ingresada
         exit(0)
 
@@ -42,8 +42,8 @@ def query ():
     else:
         try:
             text_file = withopen(file)
-            cant = text_file.count(word)
-            resDictionary = {"Frecuencia": cant}
+            frequency = text_file.count(word)
+            resDictionary = {"Frecuencia": frequency}
             return f'{resDictionary}'
             exit(0)
             # Si la palabra ingresada no esta en el archivo, devuelve frecuencia 0
@@ -51,7 +51,7 @@ def query ():
         except:
             return(error)
             exit(2)
-       
+        # si la palabra ingresada esta en el archivo, las cuenta y devuelve frecuencia
 
 
     return (error)
