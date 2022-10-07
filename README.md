@@ -4,7 +4,7 @@
 
 1. [Objetivo](#id1)
 2. [URL API](#id2)
-3. [Coleccion de pruebas](#id3)
+3. [Colección de pruebas](#id3)
 4. [Prerrequisitos](#id4)
 5. [Arquitectura](#id5)
 6. [Datos de la Infraestructura ](#id6)
@@ -15,15 +15,15 @@
 ## Objetivo <a name="id1"></a>
 El challenge consiste en desarrollar una api que devuelva la frecuencia de una palabra, dado 1 o varios archivos de texto.
 
-La API fue desarrollada en Python, utilizando Flask como framework para el despliegue de la apicación web.
-Uno de los objetivos de este challenge es disponibilizar la api "0 touch" por lo que se utilizo la herramienta Heroku para cumplir este requerimiento.
+La API fue desarrollada en Python, utilizando Flask como framework para el despliegue de la aplicación web.
+Uno de los objetivos de este challenge es disponibilizar la api "0 touch" por lo que se utilizó la herramienta Heroku para cumplir este requerimiento.
 
 La URL para poder realizar los request es la siguiente: <a name="id2"></a>
   * https://lcastineiras.herokuapp.com
 
-## Coleccion de pruebas <a name="id3"></a>
+## Colección de pruebas <a name="id3"></a>
   
-En el respositorio se encuentra una coleccion de [Postman](https://github.com/lcastineiras/meli/blob/9ceccb7cf7ca74c91bcaac04c3c08e09d8d1360c/Docs/meli-frequency.postman_collection.json) con las distintas casuisticas de los request.
+En el repositorio se encuentra una colección de [Postman](https://github.com/lcastineiras/meli/blob/9ceccb7cf7ca74c91bcaac04c3c08e09d8d1360c/Docs/meli-frequency.postman_collection.json) con las distintas casuísticas de los request.
 
 
 
@@ -79,7 +79,7 @@ En el respositorio se encuentra una coleccion de [Postman](https://github.com/lc
 
 ### [Coleccion_2022](https://github.com/lcastineiras/meli/tree/49cc1c3bda1d59b883b3d4e433a3065e142d0086/coleccion_2022)
 
-* Esta carpeta contiene los archivos .txt a ser analisados.
+* Esta carpeta contiene los archivos .txt a ser analizados.
 
 
 __Autores__ :muscle:
