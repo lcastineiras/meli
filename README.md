@@ -61,7 +61,7 @@ En el repositorio se encuentra una colección de [Postman](https://github.com/lc
 
 ## Archivos de implementación <a name="id7"></a>
 
-### [Main.py](https://github.com/lcastineiras/meli/blob/a9f3a7a57bd005ec39a379e61953f8c010aa6b82/main.py)
+### [Main.py](main.py)
 
  * En este archivo se encuentra el código para hacer el despliegue de la api.
  
