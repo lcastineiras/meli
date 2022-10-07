@@ -1,15 +1,29 @@
 #  Challenge MeLi 
 
+**Índice**
 
+1. [Objetivo](#id1)
+2. [URL API](#id2)
+3. [Coleccion de pruebas](#id3)
+4. [Datos de la Infraestructura](#id4)
+5. [Servicios de AWS usados](#id5)
+6. [Archivos de la implementación](#id6)<br>
+   6.1 [Deployment_Infra](#id7)<br>
+   6.2 [Deployment_Servicios](#id8)<br>
+7. [Deploy automatizado](#id9)
+8. [Autoscaler](#id10)
+
+
+## Objetivo <a name="id1"></a>
 El challenge consiste en desarrollar una api que devuelva la frecuencia de una palabra, dado 1 o varios archivos de texto.
 
 La API fue desarrollada en Python, utilizando Flask como framework para el despliegue de la apicación web.
 Uno de los objetivos de este challenge es disponibilizar la api "0 touch" por lo que se utilizo la herramienta Heroku para cumplir este requerimiento.
 
-La URL para poder realizar los request es la siguiente:
+La URL para poder realizar los request es la siguiente: <a name="id2"></a>
   * https://lcastineiras.herokuapp.com
   
-En el respositorio se encuentra una coleccion de [Postman](https://github.com/lcastineiras/meli/blob/9ceccb7cf7ca74c91bcaac04c3c08e09d8d1360c/Docs/meli-frequency.postman_collection.json) con las distintas casuisticas de los request.
+En el respositorio se encuentra una coleccion de [Postman](https://github.com/lcastineiras/meli/blob/9ceccb7cf7ca74c91bcaac04c3c08e09d8d1360c/Docs/meli-frequency.postman_collection.json) con las distintas casuisticas de los request.<a name="id3"></a>
 
 
 
