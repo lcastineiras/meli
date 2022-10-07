@@ -82,4 +82,6 @@ En el respositorio se encuentra una coleccion de [Postman](https://github.com/lc
 * Esta carpeta contiene los archivos .txt a ser analisados.
 
 
+__Autores__ :muscle:
 
+> Lucía Castiñeiras
