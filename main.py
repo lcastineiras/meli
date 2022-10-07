@@ -1,19 +1,9 @@
-import re
 import os
-
+dir = "coleccion_2022"
 error = "error 404"
 files = []
 from flask import Flask, request
-
-def withopen (archivo):
-
-
-    with open(f"./coleccion_2022/{archivo}", encoding="utf8", errors='ignore') as file:
-        mensaje = file.read()
-        mensaje2 = re.sub(r'[^ \nA-Za-z0-9À-ÖØ-öø-ÿ/]+', " ", mensaje).lower().split()
-        return (mensaje2)
-
-
+from funcion import *
 
 
 app = Flask(__name__)
@@ -24,51 +14,45 @@ def query ():
     args = request.args
     file = args.get('file', default=None, type=str)
 
+    # verifica que se ingrese argumento word, en caso de que no exista devuelve error
     try:
         word = args.get('word', default=None, type=str).lower()
     except:
         return (error)
 
-    cantidad = 0
+    cant = 0
 
+    # Si no se ingresa ningun file como argumento, busca la palabra ingresada en todos los archivos
     if file is None: # Si en la peticion no se detalla el arg file, devuelve none
 
-        path = os.listdir("./coleccion_2022") # Declaro variable con contenido del directorio actual
+        path = os.listdir(f"./{dir}") # declara variable con contenido del directorio
         files = []
-        for j in path: # Recorro el directorio actual
+        for j in path: # Recorre el directorio actual
 
-            if j.endswith('.txt'): # Filtro por archivos .txt
-                files.append(j) # Guardo en la lista files los archivos .txt
+            if j.endswith('.txt'): # Verifica que los archivos sean .txt
+                text_file = withopen(j)  # Abre los archivos con la funcion y devuelve una lista con las palabras
 
-        # Recorro y abro archivos .txt para leer su contenido
-        for k in files: # Recorro y abro archivos .txt para leer su contenido
-            subcant = withopen(k)
+                if word in text_file: # Se busca la palabra ingresa
+                    cant = cant + text_file.count(word) # Cuenta la frecuencia de la palabra y la suma a la variable cant
+                    # si la palabra ingresada no se encuentra, devuelve frecuencia 0
+        resDictionary = {"Frecuencia": cant}
+        return f'{resDictionary}' # Devuelve diccionario con frecuencia de la palabra ingresada
 
-
-            if word in subcant:
-                cantidad = cantidad + subcant.count(word)
-        diccionario = {"Frecuencia": cantidad}
-        return f'{diccionario}'
-
+    # Si se especifica un nombre de archivo, se verifica que el archivo exista y se pueda abrir
     else:
         try:
             withopen(file)
+            text_file = withopen(file)
+            if word in text_file:
+                cant = text_file.count(word)
+                resDictionary = {"Frecuencia": cant}
+                return f'{resDictionary}'
+            # Si la palabra ingresada no esta en el archivo, devuelve frecuencia 0
+            else:
+                return ("{'Frecuencia': 0}")
         except:
             return(error)
-
-        archivo2 = withopen(file)
-        if word in archivo2:
-            cantidad = archivo2.count(word)
-            diccionario = {"Frecuencia": cantidad}
-            return f'{diccionario}'
-        else:
-            return("{'Frecuencia': 0}")
-
-    return (error)
-
-
-
-
+        # si la palabra ingresada esta en el archivo, las cuenta y devuelve frecuencia
 
 
     return (error)
