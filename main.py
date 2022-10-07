@@ -1,7 +1,7 @@
 import os
 dir = "coleccion_2022"
 error = "error 404"
-files = []
+
 from flask import Flask, request
 from funcion import *
 
@@ -24,17 +24,15 @@ def query ():
     cant = 0
 
     # Si no se ingresa ningun file como argumento, busca la palabra ingresada en todos los archivos
-    if file is None: # Si en la peticion no se detalla el arg file, devuelve none
+    if file is None: # Si no se ingresa ningun file como argumento, busca la palabra ingresada en todos los archivos
 
         path = os.listdir(f"./{dir}") # declara variable con contenido del directorio
-        files = []
         for j in path: # Recorre el directorio actual
 
             if j.endswith('.txt'): # Verifica que los archivos sean .txt
                 text_file = withopen(j)  # Abre los archivos con la funcion y devuelve una lista con las palabras
 
-                if word in text_file: # Se busca la palabra ingresa
-                    cant = cant + text_file.count(word) # Cuenta la frecuencia de la palabra y la suma a la variable cant
+                cant = cant + text_file.count(word) # Cuenta la frecuencia de la palabra y la suma a la variable cant
                     # si la palabra ingresada no se encuentra, devuelve frecuencia 0
         resDictionary = {"Frecuencia": cant}
         return f'{resDictionary}' # Devuelve diccionario con frecuencia de la palabra ingresada
@@ -43,17 +41,13 @@ def query ():
     # Si se especifica un nombre de archivo, se verifica que el archivo exista y se pueda abrir
     else:
         try:
-            withopen(file)
             text_file = withopen(file)
-            if word in text_file:
-                cant = text_file.count(word)
-                resDictionary = {"Frecuencia": cant}
-                return f'{resDictionary}'
-                exit(0)
+            cant = text_file.count(word)
+            resDictionary = {"Frecuencia": cant}
+            return f'{resDictionary}'
+            exit(0)
             # Si la palabra ingresada no esta en el archivo, devuelve frecuencia 0
-            else:
-                return ("{'Frecuencia': 0}")
-                exit(0)
+
         except:
             return(error)
             exit(2)
