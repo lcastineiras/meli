@@ -19,6 +19,7 @@ def query ():
         word = args.get('word', default=None, type=str).lower()
     except:
         return (error)
+        exit(1)
 
     cant = 0
 
@@ -37,6 +38,7 @@ def query ():
                     # si la palabra ingresada no se encuentra, devuelve frecuencia 0
         resDictionary = {"Frecuencia": cant}
         return f'{resDictionary}' # Devuelve diccionario con frecuencia de la palabra ingresada
+        exit(0)
 
     # Si se especifica un nombre de archivo, se verifica que el archivo exista y se pueda abrir
     else:
@@ -47,15 +49,19 @@ def query ():
                 cant = text_file.count(word)
                 resDictionary = {"Frecuencia": cant}
                 return f'{resDictionary}'
+                exit(0)
             # Si la palabra ingresada no esta en el archivo, devuelve frecuencia 0
             else:
                 return ("{'Frecuencia': 0}")
+                exit(0)
         except:
             return(error)
+            exit(2)
         # si la palabra ingresada esta en el archivo, las cuenta y devuelve frecuencia
 
 
     return (error)
+    exit(3)
 
 
 if __name__ == '__main__':
