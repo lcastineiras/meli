@@ -51,7 +51,7 @@ def query ():
         except:
             return(error)
             exit(2)
-        # si la palabra ingresada esta en el archivo, las cuenta y devuelve frecuencia
+       
 
 
     return (error)
